@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="rechner.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Rechner</title>
+</head>
+
+<body>
+    <div>
+        <h2>Einfacher Rechner</h2>
+        <label class="umrechnen" for="zahl1"></label>
+        <input type="text" id="zahl1" placeholder="Zahl 1" />
+
+        <label for="type"></label>
+        <select name="type" id="type">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+            <option value="**">**</option>
+            <option value="√">√</option>
+        </select>
+
+        <label for="zahl2"></label>
+        <input type="text" id="zahl2" placeholder="Zahl 2" />
+        <span id="summe1">　=</span>
+        <p>
+            <button onclick="calcSum()">Summe berechnen</button>
+        </p>
+    </div>
+    <div>
+        <h2>Umrechner</h2>
+        <p>Binär -> Dezimal</p>
+        <label class="umrechnen" for="zahl3"></label>
+        <input type="text" id="zahl3" placeholder="Binärzahl" />
+        <button onclick="universalToDecimal('zahl3', 'ergebnis1', 2)">Umrechnen</button>
+        <span id="ergebnis1">　=</span>
+
+        <p>Dezimal -> Binär</p>
+        <label class="umrechnen" for="zahl4"></label>
+        <input type="text" id="zahl4" placeholder="Zahl" />
+        <button onclick="decimalToBinary()">Umrechnen</button>
+        <span id="ergebnis2">　=</span>
+    </div>
+
+    <div>
+        <h2>Universal-Umrechner</h2>
+        <p>ALLES -> Dezimal</p>
+        <label class="umrechnen" for="zahl5"></label>
+        <input type="text" id="zahl5" placeholder="Zahl" />
+        <label for="zahl6"></label>
+        <input type="text" id="zahl6" placeholder="n" />
+        <button onclick="universalToDecimal('zahl5', 'ergebnis3', 'zahl6')">Umrechnen</button>
+        <span id="ergebnis3">　=</span>
+    </div>
+
+
+    <button class="javascript_aufgabe" onclick="ecmaScript()">
+            Zur JavaScript Aufgabe
+        </button>
+
+</body>
+
+</html>
