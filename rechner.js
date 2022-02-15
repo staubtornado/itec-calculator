@@ -1,16 +1,19 @@
 function personalParseInt(input, n) {
     let ergebnis = 0;
-    let test;
-    n = Number(n);
+    let letter;
 
     for (let i = 0; i < input.length; i++) {
-        test = String(input[i]);
-        if (isNan(test)) {
-            test = test.charCodeAt(0) - 55;
+        letter = String(input[i]);
+        if (isNaN(letter)) {
+            letter = letter.toUpperCase().charCodeAt(0) - 55;
         }
-        ergebnis += Number(test) * n ** (input.length - 1 - i);
+        ergebnis += Number(letter) * Number(n) ** (input.length - 1 - i);
     }
     return ergebnis;
+}
+
+function personalToString(radix) {
+
 }
 
 function checkSize(number) {
@@ -29,7 +32,7 @@ function checkInput(input, base) {
     for (let i = 0; i < input.length; i++) {
         element = input[i];
 
-        const a = parseInt(element, base);
+        const a = personalParseInt(element, base);
         try {
             if (!(a.toString(base) === String(element).toLowerCase())) {
                 alert("Deine Eingabe ist ungültig.")
@@ -44,23 +47,14 @@ function checkInput(input, base) {
 }
 
 function universalToDecimal(inputID, outputID, baseID) {
-    let ergebnis = 0;
     const input = String($(`#${inputID}`).val());
 
     let n = Number($(`#${baseID}`).val());
     if (isNaN(n)) {
         n = Number(baseID);
     }
-    if (!(n > 10)) {
-        for (let i = 0; i < input.length; i++) {
-            ergebnis += Number(input[i]) * n ** (input.length - 1 - i);
-        }
-    } else {
-        ergebnis = parseInt(input, n);
-    }
-
     if (checkInput(input, n)) {
-        $(`#${outputID}`).text(`　=　${checkSize(ergebnis)}`);
+        $(`#${outputID}`).text(`　=　${checkSize(personalParseInt(input, n))}`);
     }
 }
 
@@ -78,7 +72,7 @@ function decimalToUniversal(inputID, outputID, baseID) {
     }
 }
 
-function calcSum() {
+function calc() {
     const zahl1 = Number($("#zahl1").val());
     const zahl2 = Number($("#zahl2").val());
     let ergebnis;
@@ -106,8 +100,6 @@ function calcSum() {
         $("#summe1").text(`　=　${checkSize(ergebnis)}`);
     }
 }
-
-let decimalToBinary = () => decimalToUniversal("zahl4", "ergebnis2", 2);
 
 function ecmaScript() {
     let antwort = prompt('What is the "official name of JavaScript?"', "");
