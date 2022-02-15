@@ -18,10 +18,7 @@ body {
 
 div {
     overflow: hidden;
-    margin-left: 37%;
-    margin-right: 37%;
-    margin-bottom: 3%;
-    margin-top: 50px;
+    margin: 50px 37% 3%;
     background-color: #EAEAEC30;
     border-radius: 25px;
     color: black;
