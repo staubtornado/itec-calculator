@@ -12,10 +12,6 @@ function personalParseInt(input, n) {
     return ergebnis;
 }
 
-function personalToString(radix) {
-
-}
-
 function checkSize(number) {
     if (String(number).length > 6) {
         alert(number);
