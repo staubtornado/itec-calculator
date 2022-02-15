@@ -36,7 +36,7 @@
         </p>
     </div>
     <div>
-        <h2>Umrechner</h2>
+        <h2>Binär-Umrechner</h2>
         <p>Binär -> Dezimal</p>
         <label class="umrechnen" for="zahl3"></label>
         <input type="text" id="zahl3" placeholder="Binärzahl" />
@@ -56,9 +56,16 @@
         <label class="umrechnen" for="zahl5"></label>
         <input type="text" id="zahl5" placeholder="Zahl" />
         <label for="zahl6"></label>
-        <input type="text" id="zahl6" placeholder="n" />
+        <input type="text" id="zahl6" class="basis" placeholder="n" />
         <button onclick="universalToDecimal('zahl5', 'ergebnis3', 'zahl6')">Umrechnen</button>
         <span id="ergebnis3">　=</span>
+        <p>Dezimal -> ALLES</p>
+        <label class="umrechnen" for="zahl7"></label>
+        <input type="text" id="zahl7" placeholder="Zahl" />
+        <label for="zahl8"></label>
+        <input type="text" id="zahl8" class="basis" placeholder="n" />
+        <button onclick="decimalToUniversal('zahl7', 'ergebnis4', 'zahl8')">Umrechnen</button>
+        <span id="ergebnis4">　=</span>
     </div>
 
 

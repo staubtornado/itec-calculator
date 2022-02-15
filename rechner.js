@@ -1,3 +1,18 @@
+function personalParseInt(input, n) {
+    let ergebnis = 0;
+    let test;
+    n = Number(n);
+
+    for (let i = 0; i < input.length; i++) {
+        test = String(input[i]);
+        if (isNan(test)) {
+            test = test.charCodeAt(0) - 55;
+        }
+        ergebnis += Number(test) * n ** (input.length - 1 - i);
+    }
+    return ergebnis;
+}
+
 function checkSize(number) {
     if (String(number).length > 6) {
         alert(number);
@@ -6,9 +21,31 @@ function checkSize(number) {
     return number;
 }
 
+function checkInput(input, base) {
+    input = String(input);
+    base = Number(base);
+
+    let element;
+    for (let i = 0; i < input.length; i++) {
+        element = input[i];
+
+        const a = parseInt(element, base);
+        try {
+            if (!(a.toString(base) === String(element).toLowerCase())) {
+                alert("Deine Eingabe ist ungültig.")
+                return false;
+            }
+        } catch (RangeError) {
+            alert("Die Basis ist zu groß.")
+            return false;
+        }
+    }
+    return true;
+}
+
 function universalToDecimal(inputID, outputID, baseID) {
     let ergebnis = 0;
-    const input =  String($(`#${inputID}`).val());
+    const input = String($(`#${inputID}`).val());
 
     let n = Number($(`#${baseID}`).val());
     if (isNaN(n)) {
@@ -18,11 +55,27 @@ function universalToDecimal(inputID, outputID, baseID) {
         for (let i = 0; i < input.length; i++) {
             ergebnis += Number(input[i]) * n ** (input.length - 1 - i);
         }
-    }
-    else {
+    } else {
         ergebnis = parseInt(input, n);
     }
-    $(`#${outputID}`).text(`　=　${checkSize(ergebnis)}`);
+
+    if (checkInput(input, n)) {
+        $(`#${outputID}`).text(`　=　${checkSize(ergebnis)}`);
+    }
+}
+
+function decimalToUniversal(inputID, outputID, baseID) {
+    const input = String($(`#${inputID}`).val());
+
+    let n = Number($(`#${baseID}`).val());
+    if (isNaN(n)) {
+        n = Number(baseID);
+    }
+    let ergebnis = Number(input).toString(n);
+
+    if (checkInput(input, 10)) {
+        $(`#${outputID}`).text(`　=　${checkSize(ergebnis.toUpperCase())}`);
+    }
 }
 
 function calcSum() {
@@ -47,12 +100,14 @@ function calcSum() {
             ergebnis = Math.pow(zahl1, zahl2);
             break;
         case "√":
-            ergebnis = Math.pow(zahl2, 1/zahl1);
+            ergebnis = Math.pow(zahl2, 1 / zahl1);
     }
-    $("#summe1").text(`　=　${checkSize(ergebnis)}`);
+    if (checkInput(zahl1, 10) && checkInput(zahl2, 10)) {
+        $("#summe1").text(`　=　${checkSize(ergebnis)}`);
+    }
 }
 
-let decimalToBinary = () => $("#ergebnis2").text(`　=　${checkSize(Number($("#zahl4").val()).toString(2))}`);
+let decimalToBinary = () => decimalToUniversal("zahl4", "ergebnis2", 2);
 
 function ecmaScript() {
     let antwort = prompt('What is the "official name of JavaScript?"', "");
