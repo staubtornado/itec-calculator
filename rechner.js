@@ -12,6 +12,22 @@ function personalParseInt(input, n) {
     return ergebnis;
 }
 
+function personalToString(input, n) {
+    let ergebnis = "";
+
+    while (input > 0) {
+        const mod = input % n;
+        input = Math.floor(input / n);
+
+        if (mod > 9) {
+            ergebnis = String.fromCharCode(mod + 55) + ergebnis;
+        } else {
+            ergebnis = mod.toString() + ergebnis;
+        }
+    }
+    return ergebnis;
+}
+
 function checkSize(number) {
     if (String(number).length > 6) {
         alert(number);
@@ -61,7 +77,7 @@ function decimalToUniversal(inputID, outputID, baseID) {
     if (isNaN(n)) {
         n = Number(baseID);
     }
-    let ergebnis = Number(input).toString(n);
+    let ergebnis = personalToString(Number(input), n);
 
     if (checkInput(input, 10)) {
         $(`#${outputID}`).text(`　=　${checkSize(ergebnis.toUpperCase())}`);
