@@ -49,8 +49,6 @@ function checkInput(input, base) {
         element = input[i];
 
         const a = personalParseInt(element, base);
-        console.log(personalToString(a, base).toLowerCase());
-        console.log(String(element).toLowerCase());
         try {
             if (!(personalToString(a, base).toLowerCase() === String(element).toLowerCase())) {
                 alert("Deine Eingabe ist ungültig.");
