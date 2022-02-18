@@ -15,6 +15,10 @@ function personalParseInt(input, n) {
 function personalToString(input, n) {
     let ergebnis = "";
 
+    if (input === 0) {
+        ergebnis += input;
+    }
+
     while (input > 0) {
         const mod = input % n;
         input = Math.floor(input / n);
@@ -45,13 +49,15 @@ function checkInput(input, base) {
         element = input[i];
 
         const a = personalParseInt(element, base);
+        console.log(personalToString(a, base).toLowerCase());
+        console.log(String(element).toLowerCase());
         try {
-            if (!(a.toString(base) === String(element).toLowerCase())) {
-                alert("Deine Eingabe ist ungültig.")
+            if (!(personalToString(a, base).toLowerCase() === String(element).toLowerCase())) {
+                alert("Deine Eingabe ist ungültig.");
                 return false;
             }
         } catch (RangeError) {
-            alert("Die Basis ist zu groß.")
+            alert("Die Basis ist zu groß.");
             return false;
         }
     }
