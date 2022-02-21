@@ -15,7 +15,7 @@ function personalParseInt(input, n) {
 function personalToString(input, n) {
     let ergebnis = "";
 
-    if (input === 0) {
+    if (input <= 0) {
         ergebnis += input;
     }
 
