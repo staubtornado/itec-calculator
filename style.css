@@ -6,21 +6,32 @@
 html {
     width: 100%;
     height: 100%;
+<<<<<<< Updated upstream
     overflow: auto
+=======
+    overflow: auto;
+>>>>>>> Stashed changes
 }
 
 body {
-    background: linear-gradient(123deg, rgba(69, 104, 220, 1) 0%, rgba(176, 106, 179, 1) 100%);
+    background: linear-gradient(to right, #05d6d9, #f907fc, #05d6d9, #f907fc);
+    background-size: 400% 400%;
+    animation: movingGradient 120s ease infinite;
+    animation-play-state: running;
     width: 100%;
     height: 100%;
     margin: 0;
+<<<<<<< Updated upstream
     overflow: auto
+=======
+    overflow: auto;
+>>>>>>> Stashed changes
 }
 
 div {
     overflow: hidden;
     margin: 50px 37% 3%;
-    background-color: #EAEAEC30;
+    background-color: rgba(234, 234, 236, 0.37);
     border-radius: 25px;
     color: black;
 }
@@ -45,6 +56,17 @@ div span {
 
 div .umrechnen {
     margin-left: 20%;
+<<<<<<< Updated upstream
+=======
+}
+
+div .info {
+    margin-left: 17%;
+}
+
+div .info:hover {
+    cursor: pointer;
+>>>>>>> Stashed changes
 }
 
 div p,
@@ -74,7 +96,7 @@ div .basis {
     border-radius: 25px;
     border-color: transparent;
     transition-duration: 0.5s;
-    background: #EAEAEC80;
+    background: rgba(234, 234, 236, 0.37);
 }
 
 .javascript_aufgabe:hover {
@@ -85,4 +107,19 @@ div .basis {
 
 #no_margin_bottom {
     margin-bottom: 0;
+<<<<<<< Updated upstream
+=======
+}
+
+@keyframes movingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+>>>>>>> Stashed changes
 }

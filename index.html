@@ -12,7 +12,7 @@
     <title>Rechner</title>
 </head>
 
-<body>
+<body id="body">
     <div>
         <h2>Einfacher Rechner</h2>
         <label class="umrechnen" for="zahl1"></label>
@@ -45,7 +45,7 @@
 
         <p>Dezimal → Binär</p>
         <label class="umrechnen" for="zahl4"></label>
-        <input type="text" id="zahl4" placeholder="Zahl" />
+        <input type="text" id="zahl4" placeholder="Dezimalzahl" />
         <button onclick="decimalToUniversal('zahl4', 'ergebnis2', 2)">Umrechnen</button>
         <span id="ergebnis2">　=</span>
     </div>
@@ -53,23 +53,38 @@
     <div id="no_margin_bottom">
         <h2>Universal-Umrechner</h2>
         <p>ALLES → Dezimal</p>
+<<<<<<< Updated upstream
         <label class="umrechnen" for="zahl5"></label>
+=======
+        <span class="info" onclick="howToUse('Geben Sie eine Zahl in einem beliebigen Zahlensystem ein und bei n die Basis dieser Zahl.')">🛈</span>
+        <label for="zahl5"></label>
+>>>>>>> Stashed changes
         <input type="text" id="zahl5" placeholder="Zahl" />
         <label for="zahl6"></label>
         <input type="text" id="zahl6" class="basis" placeholder="n" />
         <button onclick="universalToDecimal('zahl5', 'ergebnis3', 'zahl6')">Umrechnen</button>
         <span id="ergebnis3">　=</span>
         <p>Dezimal → ALLES</p>
+<<<<<<< Updated upstream
         <label class="umrechnen" for="zahl7"></label>
         <input type="text" id="zahl7" placeholder="Zahl" />
         <label for="zahl8"></label>
         <input type="text" id="zahl8" class="basis" placeholder="n" />
         <button onclick="decimalToUniversal('zahl7', 'ergebnis4', 'zahl8')">Umrechnen</button>
         <span id="ergebnis4">　=</span>
+=======
+        <span class="info " onclick="howToUse('Geben Sie eine Dezimalzahl ein und bei n die Basis des Zielzahlensystems ein.')">🛈</span>
+        <label for=" zahl7 "></label>
+        <input type="text " id="zahl7 " placeholder="Zahl " />
+        <label for="zahl8 "></label>
+        <input type="text " id="zahl8 " class="basis " placeholder="n " />
+        <button onclick="decimalToUniversal( 'zahl7', 'ergebnis4', 'zahl8') ">Umrechnen</button>
+        <span id="ergebnis4 ">　=</span>
+>>>>>>> Stashed changes
     </div>
 
 
-    <button class="javascript_aufgabe" onclick="ecmaScript()">
+    <button class="javascript_aufgabe " onclick="ecmaScript() ">
             Zur JavaScript Aufgabe
         </button>
 

@@ -49,13 +49,8 @@ function checkInput(input, base) {
         element = input[i];
 
         const a = personalParseInt(element, base);
-        try {
-            if (!(personalToString(a, base).toLowerCase() === String(element).toLowerCase())) {
-                alert("Deine Eingabe ist ungültig.");
-                return false;
-            }
-        } catch (RangeError) {
-            alert("Die Basis ist zu groß.");
+        if (!(personalToString(a, base).toLowerCase() === String(element).toLowerCase())) {
+            alert("Deine Eingabe ist ungültig.");
             return false;
         }
     }
@@ -81,18 +76,17 @@ function decimalToUniversal(inputID, outputID, baseID) {
     if (isNaN(n)) {
         n = Number(baseID);
     }
-    let ergebnis = personalToString(Number(input), n);
 
     if (checkInput(input, 10)) {
-        $(`#${outputID}`).text(`　=　${checkSize(ergebnis.toUpperCase())}`);
+        $(`#${outputID}`).text(`　=　${checkSize(personalToString(Number(input), n).toUpperCase())}`);
     }
 }
 
 function calc() {
     const zahl1 = Number($("#zahl1").val());
     const zahl2 = Number($("#zahl2").val());
-    let ergebnis;
 
+    let ergebnis;
     switch ($("#type").val()) {
         case "+":
             ergebnis = zahl1 + zahl2;
@@ -124,4 +118,13 @@ function ecmaScript() {
     } else {
         alert("Sie wissen es nicht? ECMAScript!");
     }
+}
+
+function howToUse(content) {
+    let body = $("#body");
+    body.css("animationPlayState", "paused");
+
+    if (!alert(content)) {}
+
+    // body.css("animationPlayState", "running");
 }
