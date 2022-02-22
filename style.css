@@ -6,11 +6,7 @@
 html {
     width: 100%;
     height: 100%;
-<<<<<<< Updated upstream
-    overflow: auto
-=======
     overflow: auto;
->>>>>>> Stashed changes
 }
 
 body {
@@ -21,11 +17,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-<<<<<<< Updated upstream
-    overflow: auto
-=======
     overflow: auto;
->>>>>>> Stashed changes
 }
 
 div {
@@ -56,8 +48,6 @@ div span {
 
 div .umrechnen {
     margin-left: 20%;
-<<<<<<< Updated upstream
-=======
 }
 
 div .info {
@@ -66,7 +56,6 @@ div .info {
 
 div .info:hover {
     cursor: pointer;
->>>>>>> Stashed changes
 }
 
 div p,
@@ -107,8 +96,6 @@ div .basis {
 
 #no_margin_bottom {
     margin-bottom: 0;
-<<<<<<< Updated upstream
-=======
 }
 
 @keyframes movingGradient {
@@ -121,5 +108,4 @@ div .basis {
     100% {
         background-position: 0% 50%;
     }
->>>>>>> Stashed changes
 }
