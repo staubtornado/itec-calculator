@@ -33,7 +33,7 @@ function personalToString(input, n) {
 }
 
 function checkSize(number) {
-    if (String(number).length > 6) {
+    if (String(number).length > 15) {
         alert(number);
         return "Siehe Alert.";
     }
